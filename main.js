@@ -12,3 +12,5 @@ var germanInput = document.getElementById("german");
 var urduInput = document.getElementById("urdu");
 var translateButton = document.getElementById("translate-button");
 var translatedCard = document.getElementById("output");
+
+console.log(TranslatorCard.translateToGerman("Year"));
