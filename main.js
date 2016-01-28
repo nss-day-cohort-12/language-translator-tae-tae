@@ -12,4 +12,4 @@ var germanInput = document.getElementById("german");
 var urduInput = document.getElementById("urdu");
 var translateButton = document.getElementById("translate-button");
 var translatedCard = document.getElementById("translated-card");
-
+console.log(TranslatorCard.translateToUrdu("Merry"));
