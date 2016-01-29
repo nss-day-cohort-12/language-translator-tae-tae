@@ -1,55 +1,29 @@
 var TranslatorCard = (function(spanishTranslation) {
     var greetingCardSpanish = {
-	    Merry: "Feliz",
-	    Christmas: "Navidad",
-	    And: "y",
-	    Happy: "próspero",
-	    New: "nuevo",
-	    Year: "año"
+	    "merry": "Feliz",
+	    "christmas": "Navidad",
+	    "and": "y",
+        "a": "un",
+	    "happy": "próspero",
+	    "new": "nuevo",
+	    "year": "año"
 	};
 
-	return {
-        translateToSpanish: function(word) {
-		  return greetingCardSpanish[word];
-	} 
 
-	}
-	
-})(TranslatorCard);
-
-
-
-
-
-
-
-
-/*
-// private variables
-var SolarSystem = (function(oldSolarSystem) {
-    
-    // private planets array
-    var closestStars = ["Alpha Centauri", "Proxima Centauri", "Barnard's Star", "Wolf 359", "Rigil Kentaurus"];
-    // private spacecraft array
-    var ageOfSolarSystem = 0; 
-    // private planetsLandedOn number
-    var dwarfPlanets = ["Pluto", "Ceres", "Eris", "Makemake", "Haumea"];
-    // getter for closestStars array
-    oldSolarSystem.getClosestStars = function () {
-        return closestStars;
-    };
-    //last_modified = Date.now(),
-    
-    // getter for ageOfSolarSystem
-    oldSolarSystem.getAgeOfSolarSystem = function() {
-        return ageOfSolarSystem;
-    };
-    console.log("Closest Stars", closestStars);
-    console.log("Age Of Solar System", ageOfSolarSystem);
-    console.log("Dwarf Planets", dwarfPlanets);
-    console.log("SolarSystem", SolarSystem);
-    
-    return oldSolarSystem;
-})(SolarSystem);
-
-*/
+	spanishTranslation.translateToSpanish = function(userString){
+        var inputWords = userString.toLowerCase().split(" ");
+            console.log(inputWords);
+        var objectKeys = Object.keys(greetingCardSpanish);
+            console.log(objectKeys);
+        for (var i = 0; i < inputWords.length; i++) {
+            if (objectKeys.indexOf(inputWords[i]) !== -1) {
+                inputWords[i] = greetingCardSpanish[inputWords[i]];
+            }
+        };
+        console.log(inputWords);
+        translatedString = inputWords.join(" ");
+        
+        translatedCard.innerHTML = translatedString;
+    }
+    return spanishTranslation;
+})(TranslatorCard); 
