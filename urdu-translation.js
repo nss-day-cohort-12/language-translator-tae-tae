@@ -1,17 +1,28 @@
 var TranslatorCard = (function(urduTranslation) {
-	    var greetingCardUrdu = {
-        Merry: "میری",
-        Christmas: "کرسمس",
-        And: "اور",
-        A: "ایک",
-        Happy: "مبارک",
-        New: "نئی",
-        Year: "سال"
+    var greetingCardUrdu = {
+        "merry": "میری",
+        "christmas": "کرسمس",
+        "and": "اور",
+        "a": "ایک",
+        "happy": "مبارک",
+        "new": "نئی",
+        "year": "سال"
     };
 
-    return {
-        translateToUrdu: function(word){
-            return greetingCardUrdu[word];
-        }
+    urduTranslation.translateToUrdu = function(userString){
+        var inputWords = userString.toLowerCase().split(" ");
+            console.log(inputWords);
+        var objectKeys = Object.keys(greetingCardUrdu);
+            console.log(objectKeys);
+        for (var i = 0; i < inputWords.length; i++) {
+            if (objectKeys.indexOf(inputWords[i]) !== -1) {
+                inputWords[i] = greetingCardUrdu[inputWords[i]];
+            }
+        };
+        console.log(inputWords);
+        translatedString = inputWords.join(" ");
+        
+        translatedCard.innerHTML = translatedString;
     }
-})(TranslatorCard);
+    return urduTranslation;
+})(TranslatorCard); 
